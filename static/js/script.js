@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(stream => {
             video.srcObject = stream;
 
-            // Captura uma imagem a cada 1 segundo
+            // Captura uma imagem a cada 2 segundos
             setInterval(() => {
                 captureImage(video);
-            }, 1000);
+            }, 2000);
 
             // Inicia a gravação de vídeo
             startRecording(stream);
