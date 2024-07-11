@@ -32,27 +32,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function captureImage(video) {
         const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
-        canvas.getContext('2d').drawImage(video, 0, 0);
+        
+        // Aguarda o vídeo estar pronto
+        if (video.readyState === video.HAVE_ENOUGH_DATA) {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-        const imageData = canvas.toDataURL('image/jpeg');
+            const imageData = canvas.toDataURL('image/jpeg');
 
-        // Envia a imagem para o servidor
-        fetch('/capture', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ image: imageData })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.message);
-        })
-        .catch(error => {
-            console.error("Erro ao enviar a imagem:", error);
-        });
+            // Envia a imagem para o servidor
+            fetch('/capture', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error("Erro ao enviar a imagem:", error);
+            });
+        }
     }
 
     function startRecording(stream) {
