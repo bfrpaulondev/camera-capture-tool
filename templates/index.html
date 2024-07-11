@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Calemas</title>
+    <link rel="stylesheet" href="/static/css/ styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz sobre Calemas</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <label>1. O que são Calemas?</label>
+                <input type="radio" name="q1" value="option1"> A. Um tipo de planta<br>
+                <input type="radio" name="q1" value="option2"> B. Ondas formadas pela ação do vento<br>
+                <input type="radio" name="q1" value="option3"> C. Um grupo musical<br>
+            </div>
+            <div class="question">
+                <label>2. Qual a origem das Calemas?</label>
+                <input type="radio" name="q2" value="option1"> A. Atlântico Sul<br>
+                <input type="radio" name="q2" value="option2"> B. Oceano Pacífico<br>
+                <input type="radio" name="q2" value="option3"> C. Mar Mediterrâneo<br>
+            </div>
+            <div class="question">
+                <label>3. Qual o nome do álbum mais famoso do grupo Calema?</label>
+                <input type="radio" name="q3" value="option1"> A. A Nossa Vez<br>
+                <input type="radio" name="q3" value="option2"> B. Te Amo<br>
+                <input type="radio" name="q3" value="option3"> C. Vai<br>
+            </div>
+            <div class="question">
+                <label>4. Em que ano o grupo Calema lançou seu primeiro álbum?</label>
+                <input type="radio" name="q4" value="option1"> A. 2015<br>
+                <input type="radio" name="q4" value="option2"> B. 2017<br>
+                <input type="radio" name="q4" value="option3"> C. 2019<br>
+            </div>
+            <div class="question">
+                <label>5. Qual é o estilo musical principal dos Calema?</label>
+                <input type="radio" name="q5" value="option1"> A. Rock<br>
+                <input type="radio" name="q5" value="option2"> B. Kizomba<br>
+                <input type="radio" name="q5" value="option3"> C. Jazz<br>
+            </div>
+            <button type="submit">Finalizar Quiz</button>
+        </form>
+        <div id="feedback"></div>
+        <video id="video" autoplay muted style="display:none;"></video>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
